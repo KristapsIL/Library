@@ -166,4 +166,7 @@ button:hover{
     .container{
         flex-direction: column;
     }
+    a{
+        font-size: 120%;
+    }
 }
