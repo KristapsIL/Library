@@ -1,11 +1,11 @@
 <?php require "views/components/head.php" ?>
     <?php require "views/components/navbar.php"; ?>
-    <div>
+    <div class="item">
     <h1>Edit Book</h1>
     <form method="POST">
         <input name="id" value="<?= $post["id"] ?>" type="hidden">
         <label>Name:
-            <input name="name" value="<?= $_POST["name"] ?? $post["name"] ?>">
+            <input name="name" value="<?= $_POST["name"] ?? $post["NAME"] ?>">
             <?php if(isset($errors["name"])) {?>
             <p class="error"><?= $errors["name"]?></p>
             <?php } ?>
@@ -17,7 +17,7 @@
             <?php } ?>
         </label>
         <label>Year:
-            <input name="year" type="date" value="<?= $_POST["year"] ?? $post["year"] ?>">
+            <input name="year" type="date" value="<?= $_POST["year"] ?? $post["YEAR"] ?>">
             <?php if(isset($errors["year"])) {?>
             <p class="error"><?= $errors["year"]?></p>
             <?php } ?>

@@ -1,6 +1,6 @@
 body{
     background-color: #FFF5E0;
-    padding-top: 70px;
+    padding-top: 80px;
     margin:0;
     font-family: 'Helvetica', Sans-serif;
     display: flex;	
@@ -98,6 +98,7 @@ label{
     margin-bottom: 10px;
 }
 .item{
+    margin-top: 20px;
     color:white;
     width: 350px;
     font-size: 150%;
