@@ -23,7 +23,7 @@
             <?php } ?>
         </label>
         <label>availability:
-            <input name="availability" type="checkbox" value="<?= $_POST["availability"] ?? $post["availability"] ?>">
+            <input name="availability" type="checkbox" value="<?= ($_POST["availability"] ?? $post["availability"])?>" <?= ($_POST["availability"] ?? $post["availability"]) == 1 ? 'checked' : ''?>>
         </label>
         <button>Submit</button>
     </form>

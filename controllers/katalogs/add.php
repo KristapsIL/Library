@@ -1,17 +1,31 @@
 <?php
 require "Core/functions.php";
 require "Core/Database.php";
+require "Core/Validator.php";
 
 admin();
-$available = 0;
 $config = require ("config.php");
 $db = new Database($config);
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-        if($_POST["availability"] == "on"){
-            $available = 1;
-        }
+    $errors = [];
 
+    if(isset($_POST["availability"]) == "on"){
+        $available = 1;
+    }else{
+        $available = 0;
+    }
+    
+    if(!Validator::string($_POST["name"], min: 1, max: 255)){
+        $errors["name"] = "Name is too long or empty";
+    }
+    if(!Validator::string($_POST["author"], min: 1, max: 255)){
+        $errors["author"] = "atuhor not valid";
+    }
+    if(!Validator::string($_POST["year"], min: 1, max: 255)){
+        $errors["year"] = "date not valid";
+    }
+    if(empty($errors)){
         $query = "INSERT INTO katalogs (name, author, year, availability) 
         VALUES (:nosaukums, :autors, :year, :availability);";
         $params = [
@@ -24,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
         header("Location: /katalogs");
         die();
-
+    }
 }
 
 

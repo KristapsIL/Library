@@ -3,17 +3,26 @@
     <div class="item">
     <h1>Add book</h1>
     <form method="POST">
-        <label>Nosaukums:
-            <input name='nosaukums' />
+        <label>Books name:
+        <input name="name" value="<?= $_POST["name"] ?? '' ?>">
+            <?php if(isset($errors["name"])) {?>
+                <div><p class="error"><?= $errors["name"]?></p></div>
+            <?php } ?>
         </label>
-        <label>Autors:
-            <input name='autors' />
+        <label>Author:
+        <input name="author" value="<?= $_POST["author"] ?? '' ?>">
+            <?php if(isset($errors["author"])) {?>
+            <p class="error"><?= $errors["author"]?></p>
+            <?php } ?>
         </label>
-        <label>gads:
-            <input type="date" name='year'/>
+        <label>Release:
+        <input name="year" type="date" value="<?= $_POST["year"] ?? '' ?>">
+            <?php if(isset($errors["year"])) {?>
+            <p class="error"><?= $errors["year"]?></p>
+            <?php } ?>
         </label>
-        <label>pieejamiba:
-            <input type="checkbox" name='availability'/>
+        <label>availability:
+        <input name="availability" type="checkbox" value="<?= $_POST["availability"] ?? 0 ?>">
         </label>
         <button >Submit</button>
     </form>

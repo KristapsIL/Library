@@ -9,7 +9,7 @@ $db = new Database($config);
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $errors = [];
 
-    if($_POST["availability"] == "on"){
+    if($_POST["availability"] == 1){
         $available = 1;
     }else{
         $available = 0;

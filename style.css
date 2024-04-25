@@ -69,16 +69,20 @@ li{
     padding-bottom: 3px;
 }
 label{
+    float:left;
     position: relative;
-    display: inline-block;
+
 }
 .error{
-    position: absolute;
+    margin:5px;
+    margin-bottom: 0px;
+    white-space: normal;
+    color:red;
+    position: relative;
     top:100%;
     font-size: 0.8em;
 }
 .book{
-
     background-color: #41B06E;
     width: 250px;
     height: 320px;
