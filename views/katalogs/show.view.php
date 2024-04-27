@@ -1,6 +1,7 @@
 <?php require "views/components/head.php" ?>
     <?php require "views/components/navbar.php"; ?>
     <div class="book" id="book-show">
+    <?php if($posts != null){ ?>  
     <h1><?= htmlspecialchars($posts["NAME"]) ?></h1>
     <p><?= htmlspecialchars($posts["author"]) ?></p>
     <p><?= htmlspecialchars($posts["YEAR"]) ?></p>
@@ -23,6 +24,9 @@
             <Button name="id" value=" <?= $_GET['id'] ?>">edit</Button>
         </form>
     <?php } ?>
+    <?PHP } else { ?>
+        <h1>Nothing here</h1>
+    <?PHP } ?>
     </div>
     </div>
 
