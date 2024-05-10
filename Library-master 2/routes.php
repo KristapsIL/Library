@@ -12,5 +12,6 @@ return [
     "/show" => "controllers/katalogs/show.php",
     "/edit" => "controllers/katalogs/edit.php",
     "/logout-screen" => "controllers/auth/logout-screen.php",
-    "/delete-screen" => "controllers/katalogs/delete-screen.php"
+    "/delete-screen" => "controllers/katalogs/delete-screen.php",
+    "/create-auth" => "controllers/authors/create.php"
 ];

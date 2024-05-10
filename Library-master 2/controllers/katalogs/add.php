@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(!Validator::string($_POST["author"], min: 1, max: 255)){
         $errors["author"] = "atuhor not valid";
     }
-    if(!Validator::string($_POST["year"], min: 1, max: 255)){
+    if(!Validator::string($_POST["year"], min: 1)){
         $errors["year"] = "date not valid";
     }
     if(empty($errors)){

@@ -1,5 +1,7 @@
 <?php
+require "Core/functions.php";
 require "Core/Database.php";
+auth();
 
 $config = require ("config.php");
 $query = "SELECT * FROM katalogs";
